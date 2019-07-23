@@ -1,0 +1,11 @@
+#spring:
+#  profiles:
+#    active: dev
+
+apiUrl:
+  static: /fuel/v1.0/bulk/static/
+  dynamic: /fuel/v1.0/bulk/dynamic/
+
+feedFile:
+  static: /StaticFeed-NO.json
+  dynamic: /DynamicFeed-NO.json
