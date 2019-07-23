@@ -26,10 +26,10 @@ public class FuelService {
     }
 
     public String fetchStationInfo(String apiUrl, String country) {
-        Optional<StationData> staticStationDataOptional = jsonToModelMapper.mapJsontoStationData(
+        Optional<StationData> staticStationDataOptional = jsonToModelMapper.mapJsonToStationData(
                 fuelClient.fetchStationData(apiUrl + apiUrlStatic + country));
 
-        Optional<StationData> dynamicStationDataOptional = jsonToModelMapper.mapJsontoStationData(
+        Optional<StationData> dynamicStationDataOptional = jsonToModelMapper.mapJsonToStationData(
                 fuelClient.fetchStationData(apiUrl + apiUrlDynamic + country));
 
         return responseFormatter.formatResponse(staticStationDataOptional, dynamicStationDataOptional);

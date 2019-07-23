@@ -15,7 +15,7 @@ public class JsonToModelMapper {
         objectMapper = new ObjectMapper();
     }
 
-    public Optional<StationData> mapJsontoStationData(String json) {
+    public Optional<StationData> mapJsonToStationData(String json) {
         StationData stationData;
         try {
             stationData = objectMapper.readValue(json, StationData.class);
