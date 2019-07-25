@@ -52,10 +52,12 @@ public class FuelControllerTest {
             e.printStackTrace();
         }
 
-        when(fuelClient.fetchStationData("http://localhost:8080/fuel/v1.0/bulk/static/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
+        when(fuelClient
+                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/static/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
                 .thenReturn(staticResponse);
 
-        when(fuelClient.fetchStationData("http://localhost:8080/fuel/v1.0/bulk/dynamic/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
+        when(fuelClient
+                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/dynamic/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
                 .thenReturn(dynamicResponse);
 
         try {
