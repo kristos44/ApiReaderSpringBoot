@@ -17,7 +17,6 @@
 	<properties>
 		<java.version>11</java.version>
 		<swagger.version>2.9.2</swagger.version>
-		<!--<openfeign.version>2.1.1.RELEASE</openfeign.version>-->
 	</properties>
 
 	<dependencies>
