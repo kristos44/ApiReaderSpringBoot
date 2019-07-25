@@ -17,7 +17,8 @@ public class FuelController {
 
     @GetMapping("/fetchStationInfo")
     public String fetchStationInfo(@ApiParam(defaultValue = "http://localhost:9000") @RequestParam String apiUrl,
-                                   @ApiParam(defaultValue = "NO") @RequestParam String country) {
-        return fuelService.fetchStationInfo(apiUrl, country);
+                                   @ApiParam(defaultValue = "NO") @RequestParam String country,
+                                   @ApiParam(defaultValue = "xcvxcvxcvxcvxcvxcvxcv") @RequestParam String apiKey) {
+        return fuelService.fetchStationInfo(apiUrl, country, apiKey);
     }
 }

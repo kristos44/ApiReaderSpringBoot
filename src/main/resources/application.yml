@@ -1,7 +1,6 @@
 api:
   urlStatic: /fuel/v1.0/bulk/static/
   urlDynamic: /fuel/v1.0/bulk/dynamic/
-  key: xcvxcvxcvxcvxcvxcvxcv
 
 feedFile:
   static: /StaticFeed-NO.json

@@ -53,16 +53,16 @@ public class FuelControllerTest {
         }
 
         when(fuelClient
-                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/static/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
+                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/static/NO&key=abc"))
                 .thenReturn(staticResponse);
 
         when(fuelClient
-                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/dynamic/NO&key=xcvxcvxcvxcvxcvxcvxcv"))
+                .fetchStationData("http://localhost:8080/fuel/v1.0/bulk/dynamic/NO&key=abc"))
                 .thenReturn(dynamicResponse);
 
         try {
             this.mockMvc.perform(
-                    get("/fuel/fetchStationInfo?apiUrl=http://localhost:8080&country=NO&key=xcvxcvxcvxcvxcvxcvxcv"))
+                    get("/fuel/fetchStationInfo?apiUrl=http://localhost:8080&country=NO&apiKey=abc"))
                     .andDo(print()).andExpect(status().isOk())
                     .andExpect(content().string(containsString("Stacji ogółem: 1831\n" +
                             "Stacji z cenami: 1625\n" +

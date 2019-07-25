@@ -4,7 +4,6 @@ import com.example.ApiClient.formatter.ResponseFormatter;
 import com.example.ApiClient.integration.FuelClient;
 import com.example.ApiClient.mapper.JsonToModelMapper;
 import com.example.ApiClient.model.StationData;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +18,6 @@ public class FuelService {
     private String apiUrlStatic;
     @Value("${api.urlDynamic}")
     private String apiUrlDynamic;
-    @Value("${api.key}")
-    private String key;
 
     public FuelService(FuelClient fuelClient, ResponseFormatter responseFormatter, JsonToModelMapper jsonToModelMapper) {
         this.fuelClient = fuelClient;
@@ -28,7 +25,7 @@ public class FuelService {
         this.jsonToModelMapper = jsonToModelMapper;
     }
 
-    public String fetchStationInfo(String apiUrl, String country) {
+    public String fetchStationInfo(String apiUrl, String country, String key) {
         Optional<StationData> staticStationDataOptional = jsonToModelMapper.mapJsonToStationData(
                 fuelClient.fetchStationData(apiUrl + apiUrlStatic + country + "&key=" + key));
 
